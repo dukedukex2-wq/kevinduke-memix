@@ -1,0 +1,250 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth !important;
+    font-family: 'Raleway', sans-serif;
+}
+/* CSS Variables */
+:root {
+   --purple: #D499FF;
+    --light-pink: #F8EDFD;
+    --white: #ffffff;
+    --black: #000000;
+    --dim-brown: #FCF3F0;
+    --text-color: #0f172a;
+    --main-color: #6b7280;
+    --other-color: #334155;
+    --notes-text-color: #0f172a;
+    --raleway-font: 'Raleway', sans-serif;
+    --instrument-serif-font: 'Instrument Serif', sans-serif;
+}
+/* Using this for the darkmode as I click on the icon */
+body.color {
+    --purple: #D499FF;
+    --white: #000000;
+    --black: #ffff;
+    background: #000000;
+    --main-color: #ffffff;
+    --light-pink: #6b7280;
+    --dim-brown: #2a2a2a;
+    --text-color: #E3D7FF;
+    --notes-text-color: #585F6A;
+}
+/* Used in darkmode when I toggle on the moon icon, it changes to this, plus, I made use of css variables */
+body {
+    background: var(--dim-brown);
+    color: var(--black);
+}
+.blockquote h5, .blockquote-footer p {
+    font-family: var(--instrument-serif-font);
+}
+/* Top menu nav styles */ 
+.navbarheader{
+   background-color: transparent;
+   backdrop-filter: blur(10px);
+   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2)) !important;
+   color: var(--black);
+}  
+/* Navbar link text */
+.navbar-nav a {
+    color: var(--black);
+    transition: all 0.45s ease;
+}.navbar-nav a:hover {
+    color: var(--main-color);
+}
+/* For the underline text effect */
+.nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    left: 50%;
+    height: 2px;
+    bottom: -5px;
+    background: var(--black);
+    transition: all 250ms ease; 
+} 
+.nav-link:hover::before {
+    width: 100%;
+    left: 0;
+}
+.h-btn {
+    color: var(--black);
+    background: var(--purple);
+}
+.h-btn:hover {
+    color: var(--white);
+    background: var(--black);
+    transform: translateY(-2px);
+}
+section {
+    padding: 100px 9% 90px;
+}
+/* Home section styles */
+/* Home text gradient text */
+.home-text h1 {
+    text-wrap: pretty;
+   background: linear-gradient(to right, #D499FF, #D499FF, #ff00ff,
+    #D499FF, #D499FF, #ff00ff, #F8EDFD
+   );
+   background-size: 200% 200%;
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: gradientText 19s ease-in-out infinite;
+
+}
+@keyframes gradientText {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 200% 50%; }
+}
+/* @keyframes gradientText {
+    to {
+        background-position: 200%;
+    }
+} */
+.home-img {
+    animation: homeimagefloat 2s ease-in-out infinite;
+}
+@keyframes homeimagefloat {
+    0% {transform: translateY(0%);}
+    50% {transform: translateY(15%);}
+    100% {transform: translateY(0%);}
+}
+
+.home1-btn {
+    background: var(--purple);
+    color: var(--black);
+    box-shadow: 6px 6px 0 var(--black);
+}
+.home1-btn:hover {
+    transform: scale(0.9);
+    box-shadow: 2px 2px 0 var(--black);
+}
+.arrow i {
+    background: var(--white);
+    color: var(--black);
+}
+.home1-btn:hover .arrow, i {
+    transform: translateX(10px);
+}
+.home-inner-text-scale:hover {
+    transform: scale(1.2);
+}
+/* Feature section styles + problem on this */
+.feature {
+   background: var(--light-pink);
+}
+.middle-text h2 {
+    color: var(--text-color);
+}
+.middle-text p {
+    font-size: var(--other-color);
+}
+.feature-bird-img img {
+    position: absolute;
+    bottom: 70%;
+    right: 8%;
+}
+.notes-text h4 {
+    color: var(--notes-text-color);
+}
+.notes-p {
+    color: var(--main-color);
+    text-wrap: balance;
+}
+/* For use cases text centering */
+@media (max-width: 992px) {
+    .notes-text {
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    .flower-bird-img {
+        display: none;
+    }
+}
+@media (max-width: 673px) {
+    .feature-bird-img {
+        display: none;
+    }
+}
+.round-icons-img {
+    animation: float 10s ease-in-out infinite;
+}
+@keyframes float {
+    0% {transform: translateY(0%);}
+    50% {transform: translateY(15%);}
+    100% {transform: translateY(0%);}
+}
+.flower-bird-img {
+    animation: homeimagefloat 2s ease-in-out infinite;
+}
+.flower-bird-img:hover {
+    transform: scale(0.9);
+}
+.flower-bird-img .flower-img{
+    position: relative;
+    bottom: 500px;
+    left: 5%;
+}
+.flower-bird-img .bird-img {
+    position: absolute;
+    right: 8%;
+}
+/* Accordion faq */
+.accordion {
+    --bs-accordion-btn-focus-box-shadow: none; /* To remove the focus */
+    --bs-accordion-btn-bg: var(--light-pink); /* To change the background of the accordion from the icon side*/
+    --bs-accordion-active-bg: var(--purple); /* For the active own when its tapped for heading*/
+    --bs-accordion-bg: var(--white); /* To change inside the accordion body background-color */
+    --bs-accordion-color: var(--main-color); /* To change the inside of the accordion color for paragraph */ 
+}
+.cta-background {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-clip: border-box;
+}
+.cta-container {
+    position: relative;
+    top: 35%;
+}
+.footer-list li a {
+    transition: all 0.45s ease;
+    color: var(--black);
+}
+.footer-list li a:hover {
+    color: var(--text-color);
+}
+:root {
+    --purple: #D499FF;
+    --light-pink: #F8EDFD;
+    --white: #ffffff;
+    --black: #000000;
+    --dim-brown: #FCF3F0;
+    --text-color: #0f172a;
+    --main-color: #6b7280;
+    --other-color: #334155;
+}
+.cta-text h2 {
+    color: var(--dim-brown);
+}
+/* For the team dropdown */
+.dropdown-menu {
+    margin-top: 15px;
+    background: var(--white);
+}
+.dropdown-item:hover {
+    background: var(--notes-text-color)
+}
+.dropdown-divider {
+    background: var(--purple);
+}
+.dropdown-menu a {
+    color: var(--black);
+}
+/* .blockquote h5 {
+    text-wrap: pretty;
+} */
+
